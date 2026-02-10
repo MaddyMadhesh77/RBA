@@ -139,27 +139,8 @@ npm run dev                  # Starts on http://localhost:5173
 
 ### Horizontal Scaling
 
-- **Load Balancing**: Deploy behind Nginx or AWS ALB with multiple Node.js instances
 - **Stateless JWT**: No server-side session storage — any instance can handle any request
 
 ### Performance
 
 - **Database Indexing**: Compound index on `(user, createdAt)` for fast task queries
-- **Caching (Redis)**: Add Redis for frequently accessed data (user profiles, task counts)
-- **Rate Limiting**: Add `express-rate-limit` for API protection
-
-### Architecture Evolution
-
-- **Microservices**: Split auth and task services with separate databases when scaling
-- **Message Queue**: Use RabbitMQ/Kafka for async operations (notifications, logging)
-- **API Gateway**: Kong or AWS API Gateway for routing, auth, and rate limiting
-
-### Deployment
-
-- **Docker**: Containerize with `Dockerfile` + `docker-compose.yml` for MongoDB + API + Client
-- **CI/CD**: GitHub Actions for automated testing and deployment
-- **Cloud**: Deploy to AWS ECS, GCP Cloud Run, or a simple VPS with PM2
-
-## License
-
-MIT
